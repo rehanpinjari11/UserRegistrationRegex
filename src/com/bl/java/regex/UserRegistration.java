@@ -75,6 +75,23 @@ public class UserRegistration {
         {
             System.out.println("Mobile number is invalid. Please follow the format: CC XXXXXXXXXX.");
         }
+    }
+
+    // Method to check password is valid or not
+    public static void validatePassword()
+    {
+        System.out.println("Enter Your Password");
+        String password = sc.nextLine();
+
+        // Regex pattern for password validation
+        if (Pattern.matches("^[A-Za-z0-9]{8,}$", password))
+        {
+            System.out.println("Your Password is Valid");
+        }
+        else
+        {
+            System.out.println("Password is invalid. It must have a minimum of 8 characters.");
+        }
 
     }
 
@@ -85,5 +102,6 @@ public class UserRegistration {
         lastName();
         validateEmail();
         validateMobileNum();
+        validatePassword();
     }
 }
