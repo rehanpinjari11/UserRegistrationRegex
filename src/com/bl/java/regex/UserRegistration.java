@@ -60,11 +60,30 @@ public class UserRegistration {
         }
     }
 
+    // Method to check mobile number is valid or not
+    public static void validateMobileNum()
+    {
+        System.out.println("Enter Your Mobile Number with Country Code");
+        String mob = sc.nextLine();
+
+        // Regex pattern for mobile number validation
+        if (Pattern.matches("^[0-9]{2}\\s[0-9]{10}$", mob))
+        {
+            System.out.println("Mobile Number is Valid");
+        }
+        else
+        {
+            System.out.println("Mobile number is invalid. Please follow the format: CC XXXXXXXXXX.");
+        }
+
+    }
+
     public static void main(String[] args)
     {
         // Calling the method
         firstName();
         lastName();
         validateEmail();
+        validateMobileNum();
     }
 }
