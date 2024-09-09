@@ -42,10 +42,29 @@ public class UserRegistration {
         }
 
     }
+
+    // Method to check email is valid or not
+    public static void validateEmail()
+    {
+        System.out.println("Enter Your Email Address");
+        String email = sc.nextLine();
+
+        // Regex pattern for email validation
+        if (Pattern.matches("^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}(\\.[a-zA-Z]{2,})?$", email))
+        {
+            System.out.println("Email Address is Valid");
+        }
+        else
+        {
+            System.out.println("Email is invalid. Please enter a valid email address.");
+        }
+    }
+
     public static void main(String[] args)
     {
         // Calling the method
         firstName();
         lastName();
+        validateEmail();
     }
 }
