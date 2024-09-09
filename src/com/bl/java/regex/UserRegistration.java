@@ -78,19 +78,20 @@ public class UserRegistration {
     }
 
     // Method to check password is valid or not
+    // Rule 2 - Should have at least 1 Upper Case
     public static void validatePassword()
     {
         System.out.println("Enter Your Password");
         String password = sc.nextLine();
 
         // Regex pattern for password validation
-        if (Pattern.matches("^[A-Za-z0-9]{8,}$", password))
+        if (Pattern.matches("^(?=.*[A-Z]).{8,}$", password))
         {
             System.out.println("Your Password is Valid");
         }
         else
         {
-            System.out.println("Password is invalid. It must have a minimum of 8 characters.");
+            System.out.println("Password is invalid. It must have at least 8 characters and contain at least 1 uppercase letter.");
         }
 
     }
